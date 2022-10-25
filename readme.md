@@ -21,3 +21,37 @@ If chosen book based on recommendations is already in the system the data is pul
 Then randomly assing a number from 0 to 3 which determines how many copies of the books there is
 After that another random assingment takes place if the first number is between 1-3, random number between 1-3 gets picked which is a number of this book copies that are physically available at the library, 
 for other books another assignment takes place that is random users gets book assigned to his/her account and date between 1 and 6 months gets also assigned and based on that fee is also assigned if there is an overdue
+
+## Models
+Reader != Worker != User but Reader and Worker are Users
+
+Reader: 
+ID - integer
+Name - string
+Surname - string
+birth-date - date
+Books in posetion - List of integers
+
+Book:
+ID - integer
+Name - string
+Author - string
+Comments - List of integers
+
+CopyBook:
+ID - integer
+BookID - integer
+availableAt - date
+
+Comment:
+ID - integer
+UserID - integer
+BookID - integer
+content - string
+
+Rating:
+ID - integer
+BookID - integer
+UserID - integer
+Grade - float
+
