@@ -55,3 +55,8 @@ BookID - integer
 UserID - integer
 Grade - float
 
+## Frontend
+I decided I don't need to put a lot of elements, design should be simple
+and not deconcentrating, Here focus should be put on utilities rather than looks
+So whole frontend with small exceptions is covered by Bootstrap and the wireframe 
+of the site is a derivative of Bootstrap examples
