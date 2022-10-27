@@ -33,10 +33,9 @@ birth-date - date
 Books in posetion - List of integers
 
 Book:
-ID - integer
-Name - string
-Author - string
-Comments - List of integers
+bookId - integer
+title - string
+author - string
 
 CopyBook:
 ID - integer
