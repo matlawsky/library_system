@@ -1,10 +1,10 @@
 from django.shortcuts import render
 
 def signup(request):
-    render(request, 'users/signup.html')
+    return render(request, 'users/signup.html')
 
 def login(request):
-    render(request, 'users/login.html')
+    return render(request, 'users/login.html')
 
 def logout(request):
     # TODO  need to route to homepage
@@ -12,7 +12,7 @@ def logout(request):
     render(request, 'users/logout.html')
 
 def myaccount(request):
-    render(request, 'users/myaccount.html')
+    return render(request, 'users/myaccount.html')
 
 def mybooks(request):
-    render(request, 'users/mybooks.html')
+    return render(request, 'users/mybooks.html')
