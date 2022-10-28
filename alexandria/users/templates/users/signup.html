@@ -3,13 +3,14 @@
 <div class="container">
     <main>
       <div class="py-5 text-center">
-        <h2>Sign up</h2>
+        <h2>Sign up!</h2>
         <p class="lead">Below is an example form built entirely with Bootstrap’s form controls. Each required form group has a validation state that can be triggered by attempting to submit the form without completing it.</p>
       </div>
-  
+
         <div class="row justify-content-md-center">
           <h4 class="mb-3">Fill the form and register</h4>
-          <form class="needs-validation" novalidate>
+          <form method="POST" action="{% url 'signup' %}">
+            {% csrf_token %}
             <div class="row g-3">
               <div class="col-sm-6">
                 <label for="firstName" class="form-label">First name</label>
@@ -48,7 +49,7 @@
   
               <div class="col-12">
                 <label for="address" class="form-label">Password</label>
-                <input type="text" class="form-control" id="address" placeholder="***********" required>
+                <input type="text" class="form-control" id="password" placeholder="***********" required>
                 <div class="invalid-feedback">
                   Please enter at least 8 signs
                 </div>
@@ -56,7 +57,7 @@
   
               <div class="col-12">
                 <label for="address2" class="form-label">Password<span class="text-muted"> (Re-type)</span></label>
-                <input type="text" class="form-control" id="address2" placeholder="***********">
+                <input type="text" class="form-control" id="password_check" placeholder="***********">
               </div>
 
             <hr class="my-4">
