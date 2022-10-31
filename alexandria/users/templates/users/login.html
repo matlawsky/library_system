@@ -1,25 +1,47 @@
 {% extends 'base_no_navbar.html'%}
 {% block content %}
 <main class="form-signin w-100 m-auto">
-  <form>
-    <h1 class="h1 mb-3 fw-normal">ALEXANDRIA</h1>
-    <h2 class="h3 mb-3 fw-normal">Please sign in</h2>
-
-    <div class="form-floating">
-      <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-      <label for="floatingInput">Email address</label>
+  <form method="POST" action="{% url 'login' %}">
+    {% csrf_token %}
+    <br>
+    <div class="row justify-content-md-center">
+    <div class="col col-lg-2"></div>
+    <div class="col-md-auto">
+    <h2 class="h1 col-md-auto">Log in to ALEXANDRIA</h2>
     </div>
-    <div class="form-floating">
-      <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-      <label for="floatingPassword">Password</label>
+    <div class="col col-lg-2"></div>
     </div>
-
-    <div class="checkbox mb-3">
-      <label>
-        <input type="checkbox" value="remember-me"> Remember me
-      </label>
+    <br>
+    <div class="py-5 text-center">
+      <p class="lead text-danger">
+          {% if error %}
+              {{ error }}
+          {% endif %}
+      </p>
     </div>
-    <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+    <br>
+    <div class="row justify-content-md-center">
+    <div class="col col-lg-2"></div>
+    <div class="col-md-auto">
+      <div class="form-floating">
+        <input type="username" class="form-control" name="userName" id="floatingInput" placeholder="username">
+        <label for="floatingInput">Username</label>
+      </div>
+      <br>
+      <div class="form-floating">
+        <input type="password" class="form-control" name="password" id="floatingPassword" placeholder="Password">
+        <label for="floatingPassword">Password</label>
+      </div>
+      <br>
+      <div class="checkbox mb-3">
+        <label>
+          <input type="checkbox" value="remember-me"> Remember me
+        </label>
+      </div>
+    <input class="w-100 btn btn-lg btn-success" type="submit" value="Log in"></input>
+  </div>
+  <div class="col col-lg-2"></div>
+  </div>
   </form>
 </main>
 {% endblock %}
