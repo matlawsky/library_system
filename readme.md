@@ -30,7 +30,7 @@ ID - integer
 Name - string
 Surname - string
 birth-date - date
-Books in posetion - List of integers
+Books in posession - List of integers
 
 Book:
 bookId - integer
