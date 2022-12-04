@@ -1,23 +1,45 @@
 from django.shortcuts import render
+from django.views.generic import CreateView, ListView, TemplateView, DetailView
+from .models import Book, CopyBook
 
-def home(request):
-    return render(request, 'books/home.html')
 
-def addbook(request):
-    pass
+class HomeView(TemplateView):
+    template_name = "books/home.html"
 
-def deletebook(request):
-    pass
 
-def returnbook(request):
-    pass
+class BooksCatalogView(ListView):
+    model = Book
+    template_name = "books/bookscatalog.html"
 
-def borrowbook(request):
-    pass
 
-def requestbook(request):
-    pass
+class MyBooksView(ListView):
+    model = CopyBook
+    template_name = "books/mybooks.html"
 
-def reservebook(request):
-    pass
 
+class DetailBookView(DetailView):
+    template_name = "books/home.html"
+
+
+class AddBookView(TemplateView):
+    template_name = "books/add_book.html"
+
+
+class BorrowBookView(TemplateView):
+    template_name = "books/home.html"
+
+
+class ReturnBookView(TemplateView):
+    template_name = "books/home.html"
+
+
+class DeleteBookView(TemplateView):
+    template_name = "books/home.html"
+
+
+class RequestBookView(TemplateView):
+    template_name = "books/home.html"
+
+
+class ReserveBookView(TemplateView):
+    template_name = "books/home.html"
